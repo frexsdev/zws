@@ -1,0 +1,177 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1
+  },
+  "1 debug pnpm:package-manifest": {
+    "initial": {},
+    "prefix": "/home/hugo/.local/share/pnpm/store/v3/tmp/dlx-96849"
+  },
+  "2 debug pnpm:context": {
+    "currentLockfileExists": false,
+    "storeDir": "/home/hugo/.local/share/pnpm/store/v3",
+    "virtualStoreDir": "/home/hugo/.local/share/pnpm/store/v3/tmp/dlx-96849/node_modules/.pnpm"
+  },
+  "3 debug pnpm:stage": {
+    "prefix": "/home/hugo/.local/share/pnpm/store/v3/tmp/dlx-96849",
+    "stage": "resolution_started"
+  },
+  "4 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/killport/1.0.2",
+    "wanted": {
+      "dependentId": ".",
+      "name": "killport",
+      "rawSpec": "latest"
+    }
+  },
+  "5 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/killport/1.0.2",
+    "requester": "/home/hugo/.local/share/pnpm/store/v3/tmp/dlx-96849",
+    "status": "resolved"
+  },
+  "6 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/killport/1.0.2",
+    "requester": "/home/hugo/.local/share/pnpm/store/v3/tmp/dlx-96849",
+    "status": "found_in_store"
+  },
+  "7 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/async/0.9.2",
+    "wanted": {
+      "dependentId": "/killport/1.0.2",
+      "name": "async",
+      "rawSpec": "^0.9.0"
+    }
+  },
+  "8 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/async/0.9.2",
+    "requester": "/home/hugo/.local/share/pnpm/store/v3/tmp/dlx-96849",
+    "status": "resolved"
+  },
+  "9 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/async/0.9.2",
+    "requester": "/home/hugo/.local/share/pnpm/store/v3/tmp/dlx-96849",
+    "status": "found_in_store"
+  },
+  "10 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/es6-promise/2.3.0",
+    "wanted": {
+      "dependentId": "/killport/1.0.2",
+      "name": "es6-promise",
+      "rawSpec": "^2.0.1"
+    }
+  },
+  "11 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/es6-promise/2.3.0",
+    "requester": "/home/hugo/.local/share/pnpm/store/v3/tmp/dlx-96849",
+    "status": "resolved"
+  },
+  "12 debug pnpm:package-manifest": {
+    "prefix": "/home/hugo/.local/share/pnpm/store/v3/tmp/dlx-96849",
+    "updated": {
+      "dependencies": {
+        "killport": "^1.0.2"
+      }
+    }
+  },
+  "13 debug pnpm:package-manifest": {
+    "prefix": "/home/hugo/.local/share/pnpm/store/v3/tmp/dlx-96849",
+    "updated": {
+      "dependencies": {
+        "killport": "^1.0.2"
+      }
+    }
+  },
+  "14 debug pnpm:stage": {
+    "prefix": "/home/hugo/.local/share/pnpm/store/v3/tmp/dlx-96849",
+    "stage": "resolution_done"
+  },
+  "15 debug pnpm:stats": {
+    "prefix": "/home/hugo/.local/share/pnpm/store/v3/tmp/dlx-96849",
+    "removed": 0
+  },
+  "16 debug pnpm:stage": {
+    "prefix": "/home/hugo/.local/share/pnpm/store/v3/tmp/dlx-96849",
+    "stage": "importing_started"
+  },
+  "17 debug pnpm:stats": {
+    "added": 3,
+    "prefix": "/home/hugo/.local/share/pnpm/store/v3/tmp/dlx-96849"
+  },
+  "18 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/es6-promise/2.3.0",
+    "requester": "/home/hugo/.local/share/pnpm/store/v3/tmp/dlx-96849",
+    "status": "found_in_store"
+  },
+  "19 debug pnpm:link": {
+    "target": "/home/hugo/.local/share/pnpm/store/v3/tmp/dlx-96849/node_modules/.pnpm/async@0.9.2/node_modules/async",
+    "link": "/home/hugo/.local/share/pnpm/store/v3/tmp/dlx-96849/node_modules/.pnpm/killport@1.0.2/node_modules/async"
+  },
+  "20 debug pnpm:link": {
+    "target": "/home/hugo/.local/share/pnpm/store/v3/tmp/dlx-96849/node_modules/.pnpm/es6-promise@2.3.0/node_modules/es6-promise",
+    "link": "/home/hugo/.local/share/pnpm/store/v3/tmp/dlx-96849/node_modules/.pnpm/killport@1.0.2/node_modules/es6-promise"
+  },
+  "21 debug pnpm:package-import-method": {
+    "method": "hardlink"
+  },
+  "22 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/home/hugo/.local/share/pnpm/store/v3/tmp/dlx-96849",
+    "status": "imported",
+    "to": "/home/hugo/.local/share/pnpm/store/v3/tmp/dlx-96849/node_modules/.pnpm/killport@1.0.2/node_modules/killport"
+  },
+  "23 debug pnpm:package-import-method": {
+    "method": "hardlink"
+  },
+  "24 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/home/hugo/.local/share/pnpm/store/v3/tmp/dlx-96849",
+    "status": "imported",
+    "to": "/home/hugo/.local/share/pnpm/store/v3/tmp/dlx-96849/node_modules/.pnpm/async@0.9.2/node_modules/async"
+  },
+  "25 debug pnpm:package-import-method": {
+    "method": "hardlink"
+  },
+  "26 debug pnpm:progress": {
+    "method": "hardlink",
+    "requester": "/home/hugo/.local/share/pnpm/store/v3/tmp/dlx-96849",
+    "status": "imported",
+    "to": "/home/hugo/.local/share/pnpm/store/v3/tmp/dlx-96849/node_modules/.pnpm/es6-promise@2.3.0/node_modules/es6-promise"
+  },
+  "27 debug pnpm:stage": {
+    "prefix": "/home/hugo/.local/share/pnpm/store/v3/tmp/dlx-96849",
+    "stage": "importing_done"
+  },
+  "28 debug pnpm:link": {
+    "target": "/home/hugo/.local/share/pnpm/store/v3/tmp/dlx-96849/node_modules/.pnpm/killport@1.0.2/node_modules/killport",
+    "link": "/home/hugo/.local/share/pnpm/store/v3/tmp/dlx-96849/node_modules/killport"
+  },
+  "29 debug pnpm:root": {
+    "added": {
+      "dependencyType": "prod",
+      "id": "registry.npmjs.org/killport/1.0.2",
+      "name": "killport",
+      "realName": "killport",
+      "version": "1.0.2"
+    },
+    "prefix": "/home/hugo/.local/share/pnpm/store/v3/tmp/dlx-96849"
+  },
+  "30 debug pnpm:link": {
+    "target": "/home/hugo/.local/share/pnpm/store/v3/tmp/dlx-96849/node_modules/.pnpm/async@0.9.2/node_modules/async",
+    "link": "/home/hugo/.local/share/pnpm/store/v3/tmp/dlx-96849/node_modules/.pnpm/node_modules/async"
+  },
+  "31 debug pnpm:link": {
+    "target": "/home/hugo/.local/share/pnpm/store/v3/tmp/dlx-96849/node_modules/.pnpm/es6-promise@2.3.0/node_modules/es6-promise",
+    "link": "/home/hugo/.local/share/pnpm/store/v3/tmp/dlx-96849/node_modules/.pnpm/node_modules/es6-promise"
+  },
+  "32 debug pnpm:summary": {
+    "prefix": "/home/hugo/.local/share/pnpm/store/v3/tmp/dlx-96849"
+  },
+  "33 error pnpm": {
+    "code": "ERR_PNPM_DLX_NO_BIN",
+    "err": {
+      "name": "pnpm",
+      "message": "No binaries found in killport",
+      "code": "ERR_PNPM_DLX_NO_BIN",
+      "stack": "pnpm: No binaries found in killport\n    at getBinName (/home/hugo/.local/share/pnpm/global/5/.pnpm/pnpm@7.1.9/node_modules/pnpm/dist/pnpx.cjs:177278:15)\n    at async Object.handler [as dlx] (/home/hugo/.local/share/pnpm/global/5/.pnpm/pnpm@7.1.9/node_modules/pnpm/dist/pnpx.cjs:177262:48)\n    at async /home/hugo/.local/share/pnpm/global/5/.pnpm/pnpm@7.1.9/node_modules/pnpm/dist/pnpx.cjs:182795:21\n    at async run (/home/hugo/.local/share/pnpm/global/5/.pnpm/pnpm@7.1.9/node_modules/pnpm/dist/pnpx.cjs:182769:34)\n    at async /home/hugo/.local/share/pnpm/global/5/.pnpm/pnpm@7.1.9/node_modules/pnpm/dist/pnpx.cjs:182841:5"
+    }
+  }
+}
