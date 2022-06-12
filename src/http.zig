@@ -79,7 +79,7 @@ pub const Status = enum {
     }
 };
 
-pub const HTTPContext = struct {
+pub const Context = struct {
     method: Method,
     uri: []const u8,
     version: Version,
@@ -144,7 +144,7 @@ pub const HTTPContext = struct {
             try headers.put(key, value);
         }
 
-        return HTTPContext{
+        return Context{
             .headers = headers,
             .method = try Method.fromString(method),
             .version = try Version.fromString(version),
@@ -154,7 +154,7 @@ pub const HTTPContext = struct {
     }
 };
 
-pub const HTTPServer = struct {
+pub const Server = struct {
     config: Config,
     allocator: Allocator,
     address: Address,
@@ -164,12 +164,13 @@ pub const HTTPServer = struct {
     const Self = @This();
 
     pub const Connection = struct {
-        frame: @Frame(handler),
+        frame: @Frame(run_handler),
     };
 
     pub const Config = struct {
         host: []const u8 = "127.0.0.1",
         port: u16 = 8080,
+        handlers: []Handler = undefined,
     };
 
     pub fn deinit(self: *Self) void {
@@ -185,26 +186,38 @@ pub const HTTPServer = struct {
         };
     }
 
-    pub fn handler(allocator: Allocator, stream: net.Stream) !void {
+    pub fn run_handler(self: Self, stream: net.Stream) !void {
         defer stream.close();
 
-        var http_context = try HTTPContext.init(allocator, stream);
-        http_context.debugPrintRequest();
+        var context = try Context.init(self.allocator, stream);
+        context.debugPrintRequest();
 
-        try http_context.respond(Status.OK, null, "Hello, World!\n");
+        for (self.config.handlers) |handler| {
+            if (try handler.predicate(context)) {
+                try handler.func(context);
+                break;
+            }
+        }
     }
 
     pub fn listen(self: *Self) !void {
         var stream_server = StreamServer.init(.{});
         try stream_server.listen(self.address);
 
-        print("[INFO] Server listening on port {} ({})\n", .{self.config.port, self.address});
+        print("[INFO] Server listening on port {} ({})\n", .{ self.config.port, self.address });
 
         while (true) {
             const connection = try stream_server.accept();
             var conn = try self.allocator.create(Connection);
-            conn.* = .{ .frame = async handler(self.allocator, connection.stream) };
+            conn.* = .{ .frame = async self.run_handler(connection.stream) };
             try self.frames.append(conn);
         }
     }
+};
+
+const Handler = struct {
+    predicate: fn (Context) anyerror!bool,
+    func: fn (Context) anyerror!void,
+
+    const Self = @This();
 };
