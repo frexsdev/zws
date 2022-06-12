@@ -11,7 +11,7 @@ pub fn main() !void {
     var gpa = GeneralPurposeAllocator(.{}){};
     const allocator = gpa.allocator();
 
-    var server = try HTTPServer.init(allocator, .{});
+    var server = try HTTPServer.init(allocator, .{ });
     defer server.deinit();
 
     try server.listen();

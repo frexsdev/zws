@@ -112,7 +112,7 @@ pub const HTTPContext = struct {
     }
 
     pub fn debugPrintRequest(self: *Self) void {
-        print("{s} {s} {s}\n", .{ self.method.asString(), self.uri, self.version.asString() });
+        print("\n{s} {s} {s}\n", .{ self.method.asString(), self.uri, self.version.asString() });
         var headers_iter = self.headers.iterator();
         while (headers_iter.next()) |entry| {
             print("{s}: {s}\n", .{ entry.key_ptr.*, entry.value_ptr.* });
@@ -176,8 +176,8 @@ pub const HTTPServer = struct {
         self.stream_server.deinit();
     }
 
-    pub fn init(allocator: Allocator, config: Config) !*Self {
-        return &Self{
+    pub fn init(allocator: Allocator, config: Config) !Self {
+        return Self{
             .allocator = allocator,
             .config = config,
             .address = try Address.resolveIp(config.host, config.port),
@@ -197,6 +197,8 @@ pub const HTTPServer = struct {
     pub fn listen(self: *Self) !void {
         var stream_server = StreamServer.init(.{});
         try stream_server.listen(self.address);
+
+        print("[INFO] Server listening on port {} ({})\n", .{self.config.port, self.address});
 
         while (true) {
             const connection = try stream_server.accept();
